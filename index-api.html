@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root">
+
+        <div class="container">
+            <header>
+                <div class="logo">
+                    <img src="http://pluspng.com/img-png/spotify-logo-png-open-2000.png" alt="Logo">
+                </div>
+            </header>
+            <div class="cds-filter">
+                <select v-model="genreSelected">
+                    <option value="">Tutti</option>
+                    <option value="rock">Rock</option>
+                    <option value="pop">Pop</option>
+                    <option value="jazz">Jazz</option>
+                    <option value="metal">Metal</option>
+                </select>
+            </div>
+
+            
+            <div class="cds-container">
+                <div class="cds" v-for="items in cds">
+                    <img :src="cds.poster" :alt="cds.title">
+                    <div class="title">{{ cds.title }}</div>
+                    <div class="author">{{ cds.author }}</div>
+                    <div class="year">{{ cds.year }}</div>
+                </div>
+            </div>
+        </div>
+
+    
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>
